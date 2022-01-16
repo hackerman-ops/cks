@@ -12,9 +12,9 @@ imports = (
 )
 
 # celery 的启动工作数量设置
-CELERY_WORKER_CONCURRENCY = 10
+CELERY_WORKER_CONCURRENCY = 1
 # 任务预取功能，会尽量多拿 n 个，以保证获取的通讯成本可以压缩。
-worker_prefetch_multiplier = 20
+worker_prefetch_multiplier = 1
 # 有些情况下可以防止死锁
 CELERYD_FORCE_EXECV = True
 # celery 的 worker 执行多少个任务后进行重启操作

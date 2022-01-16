@@ -3,6 +3,9 @@ import random
 from kubernetes.client import BatchV1Api
 from kubernetes.config import load_kube_config
 
+load_kube_config(config_file="/home/hacker/.kube/config")
+batch = BatchV1Api()
+
 
 def create_job(*args, **kwargs):
     app = kwargs["app_name"]
@@ -31,8 +34,6 @@ def create_job(*args, **kwargs):
         }
     }
 
-    load_kube_config(config_file="/home/hacker/.kube/config")
-    batch = BatchV1Api()
 
     api_response = batch.create_namespaced_job(
         body=cfg,
