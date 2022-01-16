@@ -27,3 +27,4 @@ CELERY_ENABLE_UTC = False
 
 DJANGO_CELERY_BEAT_TZ_AWARE = False
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+C_FORCE_ROOT = True
