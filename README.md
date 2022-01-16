@@ -4,6 +4,8 @@ kubernetes celery task server
 
 设计目标：改造工作量最小，资源耗用量最小。
 
+# 设计架构图
+![celery](./celery-kubernetes异步任务框架.jpg)
 # 准备工作
 python manage makemigrations 
 python manage.py createsuperuser
