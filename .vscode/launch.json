@@ -32,9 +32,10 @@
             "request": "launch",
             "program": "/root/pythonenvs/cks/bin/celery",
             "args": [
-                "worker",
+               
                 "-A",
-                "CKS"
+                "CKS",
+                "worker",
             ],
             "console": "integratedTerminal",
             "env": {

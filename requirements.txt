@@ -8,3 +8,5 @@ django_celery_beat==2.2.0
 mysqlclient==2.1.0
 redis==4.0.2
 django-celery-results==2.0.0
+
+flower==0.9.7

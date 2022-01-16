@@ -16,7 +16,7 @@ class Task:
         kwargs["app_name"] = app_name
         kwargs["project"] = "shenqianka"
         res = requests.post(url, json={"args": args, "kwargs": kwargs})
-
+ 
 
 def task(*args, **opts):
     def inner_create_task_cls(**opts):

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'celery_app',
     'django_celery_beat',
-    'django_celery_results',
+    'django_celery_results'
 ]
 
 MIDDLEWARE = [
@@ -124,7 +124,7 @@ STATIC_ROOT = "/home/hacker/CKS/static/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CELERY_broker_url = 'redis://:@127.0.0.1:6379/0'
+CELERY_BROKER_URL = 'redis://:@127.0.0.1:6379/0'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
