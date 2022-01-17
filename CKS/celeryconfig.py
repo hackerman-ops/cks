@@ -8,7 +8,7 @@ task_ignore_result = True
 # timezone='UTC'
 imports = (
     # 指定导入的任务模块
-    'celery_app.tasks'
+    'kube_worker.tasks'
 )
 
 # celery 的启动工作数量设置
