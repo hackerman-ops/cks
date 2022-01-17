@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'kube_worker',
     'django_celery_results',
-    'django_celery_beat'
+    'django_celery_beat',
+    'config'
 ]
 
 MIDDLEWARE = [
