@@ -19,5 +19,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cks/', include("kube_worker.urls")),
+    path('task/', include("django_celery_beat.urls")),
+    path('result/', include("django_celery_results.urls")),
 ]

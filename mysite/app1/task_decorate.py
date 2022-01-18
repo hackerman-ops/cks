@@ -47,12 +47,53 @@ def task_test1(x, y):
     print(x + y)
 
 
-if __name__ == "__main__":
-    task_test.delay(1, y=None)
-    task_test.apply_async(("card_number", "order_number", "price",
-                     "order_status", "unique_id", "user_source", "out_order_id"), kwargs={"1":2},
-                    countdown=5 * 60)
-    task_test.run(1)
+# if __name__ == "__main__":
+#     task_test.delay(1, y=None)
+#     task_test.apply_async(("card_number", "order_number", "price",
+#                      "order_status", "unique_id", "user_source", "out_order_id"), kwargs={"1":2},
+#                     countdown=5 * 60)
+#     task_test.run(1)
 
-    task_test1.delay(1, 5)
-    task_test1.run(1, 5)
+#     task_test1.delay(1, 5)
+#     task_test1.run(1, 5)
+
+
+ALL_INTERVAL_TASK = {}
+
+def interval_task(parameter):
+    def deco_func(func):
+        ALL_INTERVAL_TASK.update({func.__name__: {
+            "description": parameter.description,
+            "schedule": parameter.schedule,
+            "params": parameter.params,
+        }})
+        def wrapper(*args, **kwargs):
+            print(parameter)
+            func(*args, **kwargs)
+        return wrapper
+    return deco_func
+
+class ParamsCreator:
+    description = "更新租户$$$"
+    schedule = "25, 5, 0, 0,0"
+    params = {
+        "xiaoying": {
+            "args": [1,2,3,4],
+            "kwargs": {"namespace": "xy,df,wefe,ewfwe"}
+        },
+        "xs": {
+             "args": [1,2,3,4],
+            "kwargs": {"namespace": "xy,df,wefe,ewfwe"}
+        },
+        "all": {
+             "args": [1,2,3,4],
+            "kwargs": {"namespace": "xy,df,wefe,ewfwe"}
+        }
+
+    }
+
+@interval_task(ParamsCreator)
+def test():
+    pass
+
+print(ALL_INTERVAL_TASK)
