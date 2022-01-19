@@ -22,7 +22,7 @@ class TaskResult(models.Model):
     task_id = models.CharField(
         max_length=getattr(
             settings,
-            'DJANGO_CELERY_RESULTS_TASK_ID_MAX_LENGTH',
+            'RESULTS_TASK_ID_MAX_LENGTH',
             255
         ),
         unique=True, db_index=True,
@@ -116,7 +116,7 @@ class ChordCounter(models.Model):
     group_id = models.CharField(
         max_length=getattr(
             settings,
-            "DJANGO_CELERY_RESULTS_TASK_ID_MAX_LENGTH",
+            "RESULTS_TASK_ID_MAX_LENGTH",
             255),
         unique=True,
         db_index=True,

@@ -6,11 +6,6 @@ from django.contrib import admin
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
-try:
-    ALLOW_EDITS = settings.DJANGO_CELERY_RESULTS['ALLOW_EDITS']
-except (AttributeError, KeyError):
-    ALLOW_EDITS = False
-    pass
 
 from .models import TaskResult
 
@@ -56,10 +51,7 @@ class TaskResultAdmin(admin.ModelAdmin):
     )
 
     def get_readonly_fields(self, request, obj=None):
-        if ALLOW_EDITS:
-            return self.readonly_fields
-        else:
-            return list(set(
+        return list(set(
                 [field.name for field in self.opts.local_fields]
             ))
 
