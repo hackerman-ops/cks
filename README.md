@@ -10,7 +10,7 @@ kubernetes celery task server
 python manage makemigrations 
 python manage.py createsuperuser
 # 启动worker
-celery  -A worker CKS
+celery  -A CKS worker 
 
 # 启动beat
 celery -A CKS beat -l info --scheduler beat.schedulers:DatabaseScheduler  #启动beta 调度器使用数据库
