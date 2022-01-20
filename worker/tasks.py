@@ -10,4 +10,5 @@ def create_job_task(*args, **kwargs):
 def collect_interval_task():
     # Todo
     # 从redis中收集定时任务 写入数据库
+    print("hello world")
     pass

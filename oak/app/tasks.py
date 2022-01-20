@@ -1,4 +1,4 @@
-from app1.task_decorate import task
+from app.task_decorate import task
 
 
 @task

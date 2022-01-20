@@ -19,6 +19,6 @@ from django.conf.urls import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('task/', include("beat.urls")),
-    path('result/', include("results.urls")),
+    path('api/cks/beat/', include("beat.urls")),
+    path('api/cks/result/', include("results.urls")),
 ]

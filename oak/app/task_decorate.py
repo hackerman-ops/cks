@@ -1,6 +1,6 @@
 import requests
 
-from app1 import app_name
+from app import app_name
 
 
 class Task:
@@ -10,7 +10,7 @@ class Task:
         self.apply_async(*args, **kwargs)
 
     def apply_async(self, *args, **kwargs):
-        url = "http://127.0.0.1:8000/cks/task"
+        url = "http://127.0.0.1:8000/api/cks/beat/task"
 
         kwargs["func_name"] = self.name
         kwargs["app_name"] = app_name
