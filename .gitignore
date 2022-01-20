@@ -8,4 +8,4 @@
 /httpRequests/
 
 .vscode
-_pycache_
+*/__pycache__
