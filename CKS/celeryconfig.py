@@ -25,6 +25,6 @@ worker_disable_rate_limits = True
 # celery beat配置（周期性任务设置）
 CELERY_enable_utc = False
 
-DJANGO_CELERY_BEAT_TZ_AWARE = False
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+BEAT_TZ_AWARE = False
+CELERY_BEAT_SCHEDULER = 'beat.schedulers:DatabaseScheduler'
 C_FORCE_ROOT = True

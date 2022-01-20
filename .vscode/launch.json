@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    
         {
             "name": "Python: beat",
             "type": "python",
@@ -12,7 +13,7 @@
             "args": [
                 "-A",
                 "CKS",
-               "beat", "-l", "info", "--scheduler", "django_celery_beat.schedulers:DatabaseScheduler"
+               "beat", "-l", "info", "--scheduler", "beat.schedulers:DatabaseScheduler"
             ],
             "console": "integratedTerminal"
         },
