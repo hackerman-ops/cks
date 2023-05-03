@@ -3,7 +3,7 @@ import random
 from kubernetes.client import BatchV1Api
 from kubernetes.config import load_kube_config
 
-load_kube_config(config_file="/home/hacker/.kube/config")
+# load_kube_config(config_file="/home/hacker/.kube/config")
 batch = BatchV1Api()
 
 
